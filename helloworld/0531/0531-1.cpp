@@ -2,85 +2,15 @@
 #include <stdio.h>
 
 int heal2(int heal);
-
-
-//이런게 함수의 정의이다.
-
-
-void Info(int age)
-{
-    printf("이름 : 이준영\n나이 : %d\n전화번호 : 01033470532\n", age);
-}
-
-float ct(int dm)
-{
-    //float cdm = 1.5;
-    printf("크리티컬 데미지! : %f\n", dm*1.5 );
-    return 0;
-}
-
-int plusnum(int num1, int num2)
-{
-    return num1 + num2;
-}
-
-int minusnum(int num1, int num2)
-{
-    return num1 - num2;
-}
-
-int mulnum(int num1, int num2)
-{
-    return num1 * num2;
-}
-
-int nanum(int num1, int num2)
-{
-    return num1 / num2;
-}
-
-int namunum(int num1, int num2)
-{
-    return num1 % num2;
-}
-
-int heal(int heal)
-{
-    int chp = 20;
-    int MAXhp = 50;
-    int hhp = chp + heal;
-    int minus = heal - 30;
-    int a = heal / 50;
-    int b = a - 1;
-    int d = hhp - 50;
-    int c = d / 50;
-    int e = 50 * c;
-    int f = (hhp + 50) / 50;
-    int over = hhp % 50;
-    int overl = over * c;
-    int all = hhp * a;
-
-
-   
-
-    printf("%d,%d,%d,%d,%d\n",c,hhp,e,f, over);
-    return hhp - (e + over) ;
-    //return all-(e+over)*c;
-}
-
-int rsp(int hand)
-{
-    int si = 1;
-    int ro = 2;
-    int pa = 3;
-    int com = 2;
-
-
-    hand > 2 ? printf("승리!\n") : hand > 1 ? printf("무승부입니다\n") : printf("패배했습니다.\n");
-    return 0;
-}
-
-
+void Info(int age);
+float ct(int dm);
+int plusnum(int num1, int num2);
+int minusnum(int num1, int num2);
+int mulnum(int num1, int num2);
+int nanum(int num1, int num2);
+int namunum(int num1, int num2);
+int rsp(int hand);
+//함수의 전방선언
 
 int main()
 {
@@ -106,7 +36,6 @@ int main()
     //Info(25);
     //printf("%f\n", numv);
 
-    printf("%d\n",heal(10));
     ct(150);
 
     int num1 = 9; int num2 = 2;
@@ -147,4 +76,54 @@ int heal2(int heal)
 
     return Hp > 50 ? MaxHp : Hp;
 
+}
+
+void Info(int age)
+{
+    printf("이름 : 이준영\n나이 : %d\n전화번호 : 01033470532\n", age);
+}
+
+float ct(int dm)
+{
+    //float cdm = 1.5;
+    printf("크리티컬 데미지! : %f\n", dm * 1.5);
+    return 0;
+}
+
+int plusnum(int num1, int num2)
+{
+    return num1 + num2;
+}
+
+int minusnum(int num1, int num2)
+{
+    return num1 - num2;
+}
+
+int mulnum(int num1, int num2)
+{
+    return num1 * num2;
+}
+
+int nanum(int num1, int num2)
+{
+    return num1 / num2;
+}
+
+int namunum(int num1, int num2)
+{
+    return num1 % num2;
+}
+
+
+int rsp(int hand)
+{
+    int si = 1;
+    int ro = 2;
+    int pa = 3;
+    int com = 2;
+
+
+    hand > 2 ? printf("승리!\n") : hand > 1 ? printf("무승부입니다\n") : printf("패배했습니다.\n");
+    return 0;
 }
