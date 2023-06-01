@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 
-int heal2(int heal);
+int heal(int heal);
 void Info(int age);
 float ct(int dm);
 int plusnum(int num1, int num2);
@@ -55,7 +55,8 @@ int main()
     printf("%d / %d ,계산값은 %d입니다.\n", num3, num4, nanum(num3, num4));
     printf("%d %% %d ,계산값은 %d입니다.\n", num3, num4, namunum(num3, num4));
 
-    printf("\n힐 후 체력은 %d입니다.", heal2(10));
+    
+    printf("\n힐 후 체력은 %d입니다.", heal(10));
 
 
     /*int num1 = 10;
@@ -68,11 +69,12 @@ int main()
 }//중괄호 안을 스코프라고 부른다.
 
 
-int heal2(int heal)
+int heal(int heal)
 {
     int MaxHp = 50;
     int CurruntHp = 20;
     int Hp = CurruntHp + heal;
+
 
     return Hp > 50 ? MaxHp : Hp;
 
