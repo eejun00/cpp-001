@@ -85,33 +85,19 @@ int main()
     printf("진짜로 같은가?? %d \n", isSame);
     */
     
-    //char somechar;
+    char somechar;
 
-    //printf("문자를 입력해주세요 ->");
-    //scanf_s("%c", &somechar);
-    ////(isnotalphabet(somechar) == 1) ? printf("특수문자가 아닙니다.") : printf("특수문자입니다.");      //이지모드
-    //(isexclamationmark(somechar) == 1) ? printf("특수문자입니다.") : printf("특수문자가 아닙니다.");    //하드모드
+    printf("문자를 입력해주세요 ->");
+    scanf_s("%c", &somechar);
+    printf("\n");
+    (isnotalphabet(somechar) == 1) ? printf("알파벳입니다.") : printf("알파벳이 아닙니다.");      //이지모드
+    (isexclamationmark(somechar) == 1) ? printf("특수문자입니다.\n\n\n") : printf("특수문자가 아닙니다.\n\n\n");    //하드모드
 
-    int size = 0;
+    /*int size = 0;
     printf("원하시는 사각형의 사이즈를 입력해주세요 ->");
     scanf_s("%d", &size);
-    makesquare(size);
+    makesquare(size);*/
     
-    /*int whilecount = size * size;
-    int savecount = size;
-
-    while (whilecount >= 1)
-    {
-        while (savecount >= 1)
-        {
-            printf("* ");
-            savecount -= 1;
-            whilecount -= 1;
-        }
-        printf("\n");
-        savecount = size;
-    }*/
-
     return 0;
 }   //main()
 
@@ -133,30 +119,31 @@ float circlearea(int radius)
     return radius* radius * PI;
 }
 
-int isnotalphabet(char alphabet)
+int isnotalphabet(char alphabet) // 입력받은 문자가 알파벳인지 구별하는 함수
 {       
    return bool('A' <= alphabet && alphabet <= 'Z' || 'a' <= alphabet && alphabet <= 'z');
 }
 
-int isexclamationmark(char letter)
+int isexclamationmark(char letter) // 입력받은 문자가 특수문자인지 구별하는 함수
 {
-    return bool('!' <= letter && letter <= '/' || ':' <= letter && letter <= '@' || '[' <= letter && letter <= 96 || '{' <= letter && letter <='~');
+    return bool('!' <= letter && letter <= '/' || ':' <= letter && letter <= '@'
+        || '[' <= letter && letter <= 96 || '{' <= letter && letter <='~');
 }
 
-void makesquare(int count)
+void makesquare(int count) // '*'로 정사각형을 만드는 코드
 {
-    int whilecount = count * count;
-    int savecount = count;
+    int whilecount = count * count; //'*'의 입력 갯수를 저장한 변수 (정사각형의 넓이 = '*'의 갯수)
+    int savecount = count;  //count의 처음 입력값 저장
 
-    while (whilecount >= 1)
+    while (whilecount >= 1) // 정사각형이 완성될때까지 반복하는 반복문
     {
-        while (savecount >= 1)
+        while (savecount >= 1) //정사각형의 1줄이 완성될때까지 반복하는 반복문
         {
             printf("* ");
             savecount -= 1;
             whilecount -= 1;
         }
-        printf("\n");
-        savecount = count;
+        printf("\n"); // 한줄이 완성됐다면 위의 반복문 종료후 줄바꿈
+        savecount = count; //count를 초기값으로 다시 저장후 반복
     }
 }
