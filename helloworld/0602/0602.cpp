@@ -42,7 +42,7 @@ int main()
 	//printf("프로그램을 종료합니다. \n");
 
 
-	criticaldamge();
+	comdiceNomal();
 	
 }	//main 함수 종료
 
