@@ -22,10 +22,6 @@ void ZeroInStar()
         for (int i = 0; i < 5; i++) //'*' 5개로 배열을 초기화
         {
             board[i] = '*';
-            //if (i == 0)
-            //{
-            //    board[i] = '0';
-            //}
         }
 
 
@@ -34,10 +30,10 @@ void ZeroInStar()
         system("cls");
         switch (keyInput)
         {
-        case 'a':
+        case 'a':   //a가 입력되었을경우
             if (count <= 0)
             {
-                printf("'0'이 배열을 벗어났습니다.\n");
+                printf("'0'이 배열을 벗어났습니다.\n"); 
                 if (count == 0)
                 {
                     count -= 1;
@@ -47,30 +43,30 @@ void ZeroInStar()
             else
             {
                 count -= 1;
-                board[count] = '0';
+                board[count] = '0'; //배열안에 count의 숫자에따라 0를 넣어준다.
           
             }
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++) //완성된 배열을 출력하는 반복문
             {
                 printf("%c ", board[i]);
             }
             break;
-        case 'd':
+        case 'd':   //d가 입력되었을 경우
             if (count < 4)
             {
-                board[++count] = '0';
+                board[++count] = '0';   //배열안에 count의 숫자에따라 0를 넣어준다.
             }
             else
             {
-                printf("프로그램이 종료됩니다.\n");
+                printf("프로그램이 종료됩니다.\n");   // 배열을 벗어난곳으로 갈경우 프로그램 종료
                 exit(0);
             }
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++) //완성된 배열을 출력하는 반복문
             {
                 printf("%c ", board[i]);
             }
             break;
-        default:            
+        default:            //입력이 a와d가 아닐경우
             printf("\n\n입력이 잘못되었습니다.\n");
         }
     }

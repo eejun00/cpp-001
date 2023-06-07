@@ -67,8 +67,3 @@ void Description004()
     }
     
 }
-
-void shiftzero()
-{
-    for (int)
-}
