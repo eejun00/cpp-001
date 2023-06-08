@@ -18,7 +18,9 @@ void trumphcard() //트럼프 카드 1장을 랜덤하게 뽑아서 출력하는
 
     int onecard = 0;
 
-    for (int i = 0; i < 52; i++)
+    //52개의 배열칸에 하나하나 숫자를 넣는 반복문
+    //0~12 스페이드 13~25 다이아 26~38 하트 39~52 클로버
+    for (int i = 0; i < 52; i++) 
     {
         if ((i % 13) == 0)
         {
@@ -65,7 +67,7 @@ void trumphcard() //트럼프 카드 1장을 랜덤하게 뽑아서 출력하는
 
 
 
-    if (cards[onecard] < 15)
+    if (cards[onecard] < 15) //뽑은 카드의 수가 숫자일 경우 %d로 출력되도록
     {
         if (onecard < 13)
         {
@@ -83,10 +85,11 @@ void trumphcard() //트럼프 카드 1장을 랜덤하게 뽑아서 출력하는
         {
             printf("%s / %d ", cardpatterns[3], cards[onecard]);
         }
+        printf("\n\n");
     }
     else
     {
-        if (onecard < 13)
+        if (onecard < 13) //뽑은 카드의 수가 A,J같은 문자일경우 %c로 출력
         {
             printf("%s / %c ", cardpatterns[0], cards[onecard]);
         }
@@ -102,6 +105,7 @@ void trumphcard() //트럼프 카드 1장을 랜덤하게 뽑아서 출력하는
         {
             printf("%s / %c ", cardpatterns[3], cards[onecard]);
         }
+        printf("\n\n");
     }
 
 
