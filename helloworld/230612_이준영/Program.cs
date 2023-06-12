@@ -61,7 +61,7 @@ namespace _0609cs
 
                 if (point > 3000)
                 {
-                    Console.WriteLine("당신이 가진 포인트는 무려 {0}입니다!");
+                    Console.WriteLine("당신이 가진 포인트는 무려 {0}입니다!",point);
                     Console.WriteLine("축하합니다!! 게임에서 승리했습니다!!");
                     return;
                 }
@@ -72,7 +72,7 @@ namespace _0609cs
                     string strpoint;
                     int bettingpoint = 0;
                     Console.Clear();
-                    Console.WriteLine("현재 가지고 있는 포인트 : {0}", point);
+                    Console.WriteLine("현재 가지고 있는 포인트 : {0}\n", point);
 
                     Random random = new Random();
                     int count = cardnum.Length;
@@ -96,7 +96,7 @@ namespace _0609cs
                         {
                             Console.WriteLine("컴퓨터의 {0}번째 카드", i + 1);
                         }
-                        else
+                        else       //마지막 카드를 뽑기전 배팅 금액을 입력받고 내 카드를 뽑는다.                
                         {
                             Console.WriteLine("배팅할 금액을 입력해 주세요  ");
                             strpoint = Console.ReadLine();
@@ -171,8 +171,14 @@ namespace _0609cs
                     int comcard1 = cards[cardnum[0]];
                     int comcard2 = cards[cardnum[1]];
                     int mycard = cards[cardnum[2]];
+                    int tempcard= default;
 
-
+                    if(comcard1>comcard2)   //첫번째카드가 더 클경우 조건문 성립을 위해 작은쪽이 앞으로 오도록 변경
+                    {
+                        tempcard = comcard1;
+                        comcard1 = comcard2;    
+                        comcard2 = tempcard;
+                    }
 
                     if ((comcard1 < mycard) && (comcard2 > mycard))
                     {
