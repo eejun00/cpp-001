@@ -10,6 +10,7 @@ namespace _230613HW
     {
         static char Player = 'X';
         static char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        
 
         public static void Main(string[] args)
         {          
@@ -107,7 +108,10 @@ namespace _230613HW
                    (board[3] == Player && board[4] == Player && board[5] == Player) ||
                    (board[6] == Player && board[7] == Player && board[8] == Player) ||
                    (board[0] == Player && board[3] == Player && board[6] == Player) ||
-                   (board[1] == Player && board[4] == Player && board[7] == Player);
+                   (board[1] == Player && board[4] == Player && board[7] == Player) ||
+                   (board[2] == Player && board[5] == Player && board[8] == Player) ||
+                   (board[0] == Player && board[4] == Player && board[8] == Player) ||
+                   (board[2] == Player && board[4] == Player && board[6] == Player);
         }
     }
 }
