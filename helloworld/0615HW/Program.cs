@@ -16,18 +16,14 @@ namespace _0615HW
 
         static void StoneGame()
         {
-            
-            int size = default;
+
+            int size = 20;
             int point = 0; ;    // 돌3개로 깰때마다 올라감
             //DateTime nowDate = DateTime.Today;
             Console.WriteLine("게임을 시작하기 전, 맵의 크기를 입력하여 주세요(5~15)");
             size = int.Parse(Console.ReadLine());
 
-            while (!((size >= 5) && (size <= 15)))
-            {
-                Console.WriteLine("잘못된 값입니다. 다시 입력해주세요.");
-                size = int.Parse(Console.ReadLine());
-            }
+           
             
             reset:      
             //스위치문에서 R을 입력받았을 시 여기로 이동
