@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace _230618HW
 {
@@ -18,6 +19,7 @@ namespace _230618HW
 
         static void MapGame()
         {
+            //클래스,변수 설정
             Map map1 = new Map();
             Shop shop1 = new Shop();
             CardGame card1 = new CardGame();
@@ -36,8 +38,10 @@ namespace _230618HW
             int x_axis = MAP_SIZE_X/2;
             List<Shopitem> inventory = new List<Shopitem>();
             int gold = 500;
-        reset:
-//스위치문에서 R을 입력받았을 시 여기로 이동
+            reset:
+            //스위치문에서 R을 입력받았을 시 여기로 이동
+
+            Console.SetWindowSize(100, 40);
 
 
 
@@ -52,7 +56,7 @@ namespace _230618HW
             map1.PrintMap();
 
 
-            while (point < 5)
+            while (playerHp < 0 || gold < 3000)
             {
 
                 ConsoleKeyInfo keyInput = Console.ReadKey(true); //키입력을 받고 확인하는 내용
@@ -192,6 +196,8 @@ namespace _230618HW
                         break;
                     case ConsoleKey.I:
                         shop1.Printinven(inventory);
+                        Thread.Sleep(2000);
+                        Console.Clear();
                         break;
                     default:
                         Console.WriteLine("\n\n입력이 잘못되었습니다.\n");
@@ -204,18 +210,18 @@ namespace _230618HW
               
             }
             Console.Clear();
-            map1.PrintMap();
-            Console.WriteLine("\n\n게임을 종료합니다...\n\n");
+            status(gold, playerHp);
+            Console.WriteLine("\n\n여정을 마치고 게임을 종료합니다...\n\n");
         }
 
         static void status(int gold, int playerHp)
         {
             Console.SetCursorPosition(0, 0);
-            Console.Write("현재 나의 골드 : ");
+            Console.Write("나의 골드 : ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("{0} gold", gold);
             Console.ResetColor();
-            Console.Write("현재 나의 체력 : ");
+            Console.Write("나의 체력 : ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("♥ {0}", playerHp);
             Console.ResetColor();
