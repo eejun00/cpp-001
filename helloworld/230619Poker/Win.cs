@@ -11,6 +11,8 @@ namespace _230619Poker
         public int pattern;
         public int number;
 
+        // S S S S S
+        // 1 2 3 4 5
         public bool RoyalStFlush(int[] mycards, string[] mypatterns)
         {
             Array.Sort(mycards);    //카드 정렬
